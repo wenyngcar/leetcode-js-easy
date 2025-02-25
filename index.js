@@ -1,18 +1,12 @@
 /**
- * @param {number} n
- * @return {Function} counter
+ * @param {number} millis
+ * @return {Promise}
  */
-var createCounter = function(n) {
-  let add = -1
-  return function() {
-    add += 1
-    return n + add
-  };
-};
+async function sleep(millis) {
+
+}
 
 /** 
- * const counter = createCounter(10)
- * counter() // 10
- * counter() // 11
- * counter() // 12
+ * let t = Date.now()
+ * sleep(100).then(() => console.log(Date.now() - t)) // 100
  */
