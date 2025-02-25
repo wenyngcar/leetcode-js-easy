@@ -1,18 +1,6 @@
 /**
- * @param {number} n
- * @return {Function} counter
+ * @return {null|boolean|number|string|Array|Object}
  */
-var createCounter = function(n) {
-  let add = -1
-  return function() {
-    add += 1
-    return n + add
-  };
+Array.prototype.last = function() {
+  return this.length > 0 ? this[this.length - 1] : -1
 };
-
-/** 
- * const counter = createCounter(10)
- * counter() // 10
- * counter() // 11
- * counter() // 12
- */
