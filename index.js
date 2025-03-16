@@ -1,12 +1,6 @@
 /**
- * @param {number} millis
- * @return {Promise}
+ * @return {null|boolean|number|string|Array|Object}
  */
-async function sleep(millis) {
-
-}
-
-/** 
- * let t = Date.now()
- * sleep(100).then(() => console.log(Date.now() - t)) // 100
- */
+Array.prototype.last = function() {
+  return this.length > 0 ? this[this.length - 1] : -1
+};
