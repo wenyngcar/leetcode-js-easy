@@ -1,12 +1,17 @@
 /**
- * @param {number} millis
- * @return {Promise}
+ * @param {number[]} nums
+ * @param {Function} fn
+ * @param {number} init
+ * @return {number}
  */
-async function sleep(millis) {
-  return new Promise(resolve => setTimeout(resolve, millis));
-}
-
-/** 
- * let t = Date.now()
- * sleep(100).then(() => console.log(Date.now() - t)) // 100
- */
+var reduce = function(nums, fn, init) {
+  if (nums.length == 0) {
+    return init
+  }
+  else {
+    for (i = 0; i < nums.length; i++) {
+      init = fn(init, nums[i])
+    }
+    return init
+  }
+};
