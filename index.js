@@ -1,17 +1,14 @@
 /**
- * @param {Function[]} functions
- * @return {Function}
+ * @param {number[]} arr
+ * @param {Function} fn
+ * @return {number[]}
  */
-var compose = function(functions) {
-  return function(x) {
-    for (let i = functions.length - 1; i >= 0; i--) {
-      x = functions[i](x);
+var filter = function(arr, fn) {
+  const filteredArr = []
+  for (let i = 0; i < arr.length; i++) {
+    if (fn(arr[i], i)) {
+      filteredArr.push(arr[i])
     }
-    return x;
-  };
-};
-
-/**
- * const fn = compose([x => x + 1, x => 2 * x])
- * fn(4) // 9
- */
+  }
+  return filteredArr
+}
