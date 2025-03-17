@@ -1,17 +1,17 @@
 /**
- * @param {number[]} nums
- * @param {Function} fn
- * @param {number} init
- * @return {number}
+ * @param {Function[]} functions
+ * @return {Function}
  */
-var reduce = function(nums, fn, init) {
-  if (nums.length == 0) {
-    return init
-  }
-  else {
-    for (i = 0; i < nums.length; i++) {
-      init = fn(init, nums[i])
+var compose = function(functions) {
+  return function(x) {
+    for (let i = functions.length - 1; i >= 0; i--) {
+      x = functions[i](x);
     }
-    return init
-  }
+    return x;
+  };
 };
+
+/**
+ * const fn = compose([x => x + 1, x => 2 * x])
+ * fn(4) // 9
+ */
