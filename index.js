@@ -3,12 +3,12 @@
  * @param {Function} fn
  * @return {number[]}
  */
-var filter = function(arr, fn) {
-  const filteredArr = []
+var map = function(arr, fn) {
+  const result = []
   for (let i = 0; i < arr.length; i++) {
-    if (fn(arr[i], i)) {
-      filteredArr.push(arr[i])
-    }
+    let temp = fn(arr[i], i)
+    result.push(temp)
   }
-  return filteredArr
-}
+
+  return result
+};
